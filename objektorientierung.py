@@ -123,6 +123,7 @@ print(len(book))    #um länge des Dic herauszufinden
 
 #Vererbung
 
+"""
 class Student():
     def __init__(self, firstname, lastname):
         self.firtsnname = firstname
@@ -151,11 +152,35 @@ students = [
 ]
 
 for student in students:
-    print(students.name())
+    print(student.name())
 
     
 print(student.name())
 print(student2.name())
+"""
+
+#Aufgabe Vererbung
+
+"""
+class FileReader():
+    def __init__(self, filename):
+        self.filename = filename 
+    
+    def lines(self):
+        lines = []
+        with open(self.filename, "r") as file:
+            for line in file:
+                lines.append(line.strip())
+            return lines
+    pass
+
+f = FileReader("./file.txt")
+print(f.lines())
+"""
+
+#Aufgabe 2 Vererbung
+
+
 
 
 
