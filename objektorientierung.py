@@ -178,9 +178,57 @@ f = FileReader("./file.txt")
 print(f.lines())
 """
 
-#Aufgabe 2 Vererbung
+#Variablen Typ feststellen
+
+"""
+class Student():
+    def __init__(self, firstname, lastname):
+        self.firtsnname = firstname
+        self.lastname = lastname
+    
+    def name(self):
+        return self.firtsnname + " " + self.lastname
+
+class WorkingStudent(Student):  #(Student) vererbt alle Eigenschaften der Studenten Klasse
+    def __init__(self, firstname, lastname, company):
+        super().__init__(firstname, lastname)   #__init__ aus der vererbten Klasse (Student) aufgerufen
+        self.company = company
+    
+    def name(self):
+        return super().name()+ " " + self.company   #name wird aus vererbter Klasse aufgerufen
 
 
+w_student = WorkingStudent("Max", "Müller", "Facebook")
+studennt = Student("Monika", "Neumann")
+
+print(type(w_student))  #Vererbung wird nicht mit betrachtet
+print(type(studennt))
+
+if type(studennt) == Student:
+    print("Das ist ein Student")
+
+print(isinstance(w_student, WorkingStudent))    #Vererbunng wird mit betrachtet
+print(isinstance(w_student, Student))
+
+print(isinstance(studennt, WorkingStudent))
+print(isinstance(studennt, Student))
+"""
+
+#In Python ist alles ein Objekt
+
+a = 12.5
+
+print(type(a))  #typ der Variable wird ausgegeben
+
+a = 12.5
+a.__add__(5)    #__add__ = innterner Plus Operator
+
+s = "Hallo Welt"
+s.__len__()     #__len__ = interne Klasse für die Länge des Strings
 
 
-
+class A:
+    def __len__(self):
+        return 6
+instance = A()
+len(instance)
