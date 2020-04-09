@@ -216,6 +216,7 @@ print(isinstance(studennt, Student))
 
 #In Python ist alles ein Objekt
 
+"""
 a = 12.5
 
 print(type(a))  #typ der Variable wird ausgegeben
@@ -232,3 +233,4 @@ class A:
         return 6
 instance = A()
 len(instance)
+"""
